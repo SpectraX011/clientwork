@@ -1,0 +1,189 @@
+:root {
+  --primary-blue: #0066cc;
+  --fb-blue: #1877f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #ffffff; /* Default safety background */
+}
+
+/* Phase 1 & 3: White Backgrounds */
+.white-bg,
+.full-screen-mode {
+  background: #ffffff !important;
+}
+
+/* Phase 2: Professional Fixed Background */
+#securityOverlay {
+  background: url("bgfb.jpg") no-repeat center center fixed;
+  background-size: cover; /* Ensures image fills the screen without gaps */
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Card Styling */
+.glass-card {
+  background: white;
+  border-radius: 16px;
+  width: 420px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.security-card {
+  background: #0a192f;
+  color: white;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.centered-logo,
+.auth-logo {
+  width: 60px; /* Professional small size */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.brand-header,
+.auth-logo-container {
+  padding: 25px 0 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-content {
+  padding: 30px;
+  text-align: center;
+}
+
+.card-content h2,
+.card-content h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+.security-card p {
+  color: #b0b0b0;
+}
+
+/* Form Inputs */
+.professional-input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 1rem;
+}
+
+.security-card .professional-input {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-submit {
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.btn-primary {
+  background: var(--fb-blue);
+  color: white;
+  width: 48%;
+}
+.btn-secondary {
+  background: #eee;
+  width: 48%;
+  color: #4b4f56;
+}
+.btn-submit {
+  background: var(--primary-blue);
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-primary:hover,
+.btn-submit:hover {
+  opacity: 0.9;
+}
+
+/* Phase 3: Responsive Full Screen Pop-out */
+.full-screen-mode {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-popout {
+  width: 100vw;
+  height: 100vh;
+}
+
+.warning-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Prevents zooming or cropping on any screen size */
+  display: block;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 480px) {
+  .glass-card {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  .action-buttons {
+    flex-direction: column; /* Stack buttons on small screens */
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
