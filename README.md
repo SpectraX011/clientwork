@@ -14,15 +14,6 @@ Features
 
 
 
-    File Structure
-
-
-    File,Description
-index.html,The main structure of the simulation.
-style.css,Professional styling and responsive layout rules.
-script.js,Logic for stage transitions and Fullscreen API calls.
-client.mp4,Integrated voice/audio assets.
-
 
 
 
